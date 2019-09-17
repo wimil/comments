@@ -9,6 +9,22 @@ From the command line:
 composer require wimil/comments
 ```
 
+### Publish Config & configure (optional)
+
+Publish the config file (optional):
+
+```bash
+php artisan vendor:publish --provider="Wimil\Comments\Provider" --tag=config
+```
+
+### Publish Migrations (customization)
+
+You can publish migration to allow you to have more control over your table
+
+```bash
+php artisan vendor:publish --provider="Wimil\Comments\Provider" --tag=migrations
+```
+
 ### Run migrations
 
 We need to create the table for comments.
@@ -41,12 +57,4 @@ class Product extends Model
 {
     use Commentable;
 }
-```
-
-### Publish Config & configure (optional)
-
-Publish the config file (optional):
-
-```bash
-php artisan vendor:publish --provider="Wimil\Comments\Provider" --tag=config
 ```
