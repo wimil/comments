@@ -6,7 +6,7 @@ Comments for Laravel.
 From the command line:
 
 ```bash
-composer require laravelista/comments
+composer require wimil/comments
 ```
 
 ### Run migrations
@@ -22,7 +22,7 @@ php artisan migrate
 Add the `Commenter` trait to your User model so that you can retrieve the comments for a user:
 
 ```php
-use Laravelista\Comments\Commenter;
+use Wimil\Comments\Commenter;
 
 class User extends Authenticatable
 {
@@ -35,7 +35,7 @@ class User extends Authenticatable
 Add the `Commentable` trait to the model for which you want to enable comments for:
 
 ```php
-use Laravelista\Comments\Commentable;
+use Wimil\Comments\Commentable;
 
 class Product extends Model
 {
@@ -48,5 +48,5 @@ class Product extends Model
 Publish the config file (optional):
 
 ```bash
-php artisan vendor:publish --provider="Laravelista\Comments\ServiceProvider" --tag=config
+php artisan vendor:publish --provider="Wimil\Comments\Provider" --tag=config
 ```
