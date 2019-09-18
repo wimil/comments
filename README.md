@@ -59,6 +59,22 @@ class Product extends Model
 }
 ```
 
+If you want to have your own Comment Model create a new one and extend my Comment model.
+
+``` php
+use Actuallymab\LaravelComment\Models\Comment as LaravelComment;
+
+class Comment extends LaravelComment
+{
+    // ...
+}
+```
+
+and dont forget to update the model name in the `config/comment.php` file.
+
+Comment package comes with several modes.
+
+
 ## Usage
 
 ``` php
