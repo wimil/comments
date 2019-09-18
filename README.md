@@ -62,9 +62,9 @@ class Product extends Model
 If you want to have your own Comment Model create a new one and extend my Comment model.
 
 ``` php
-use Actuallymab\LaravelComment\Models\Comment as LaravelComment;
+use Wimil\Comments\Model\Comment as BaseComment;
 
-class Comment extends LaravelComment
+class Comment extends BaseComment
 {
     // ...
 }
