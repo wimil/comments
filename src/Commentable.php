@@ -35,4 +35,9 @@ trait Commentable
     {
         return $this->morphMany(config('comments.model'), 'commentable')->where('status', 'approved');
     }
+    
+    public function primaryId()
+    {
+        return $this->getAttribute($this->primaryKey);
+    }
 }
