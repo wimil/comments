@@ -9,7 +9,7 @@ class Provider extends ServiceProvider
 
     public function boot()
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../migrations');
+        //$this->loadMigrationsFrom(__DIR__ . '/../migrations');
 
         $timestamp = date('Y_m_d_His', time());
 
