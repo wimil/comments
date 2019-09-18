@@ -17,7 +17,7 @@ Publish the config file (optional):
 php artisan vendor:publish --provider="Wimil\Comments\Provider" --tag=config
 ```
 
-### Publish Migrations (customization)
+### Publish Migrations
 
 You can publish migration to allow you to have more control over your table
 
@@ -33,7 +33,7 @@ We need to create the table for comments.
 php artisan migrate
 ```
 
-### Add Commenter trait to your User model
+### Add Commenter trait to your Model
 
 Add the `Commenter` trait to your User model so that you can retrieve the comments for a user:
 
