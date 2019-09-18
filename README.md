@@ -1,5 +1,5 @@
-# comments
-Comments for Laravel.
+# Comments for Laravel.
+
 
 ## Installation
 
