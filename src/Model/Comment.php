@@ -3,9 +3,11 @@
 namespace Wimil\Comments\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Wimil\Comments\Commentable;
 
 class Comment extends Model
 {
+    use Commentable;
     /**
      * The relations to eager load on every query.
      *
@@ -18,7 +20,7 @@ class Comment extends Model
      *
      * @var array
      */
-    protected $fillable = ['comment', 'status'];
+    protected $fillable = ['comment', 'status', 'commenter_id', 'commenter_type'];
 
     /**
      * The user who posted the comment.
