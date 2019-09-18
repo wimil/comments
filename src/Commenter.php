@@ -8,6 +8,24 @@ namespace Wimil\Comments;
  */
 trait Commenter
 {
+    public function comment($commentable, string $commentText = '')
+    {
+
+        $commentModel = config('comments.model');
+
+        $comment = new $commentModel([
+            'comment' => $commentText,
+            'status' => config('comments.status'),
+            'commenter_id'   => $this->primaryId(),
+            'commenter_type' => get_class(),
+        ]);
+
+        $commentable->comments()->save($comment);
+
+        return $comment;
+    }
+    
+    
     /**
      * Returns all comments that this user has made.
      */
