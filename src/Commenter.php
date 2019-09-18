@@ -40,4 +40,9 @@ trait Commenter
     {
         return $this->morphMany(config('comments.model'), 'commenter')->where('status', 'approved');
     }
+    
+    private function primaryId()
+    {
+        return $this->getAttribute($this->primaryKey);
+    }
 }
