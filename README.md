@@ -58,3 +58,14 @@ class Product extends Model
     use Commentable;
 }
 ```
+
+## Usage
+
+``` php
+$user = App\User::first();
+$product = App\Product::first();
+
+// $user->comment(Commentable $model, $comment = '', $rate = 0);
+$user->comment($product, 'Lorem ipsum ..', 3);
+
+```
