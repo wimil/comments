@@ -34,21 +34,3 @@ class Provider extends ServiceProvider
         );
     }
 }
-
-//.*bot$
-
-//^.*bot.*$|
-
-//^.*bot.*$
-
-//\bdramasmp4.com\b
-
-//^bot.*$||^.*eee$||^.*aaa.*$||\bdoramasmp4.com\b
-
-
-
-//.*bot incluiría "bot" y "robot"    --> \.*bot\b
-
-//bot.* incluiría "bot" y "bots"   ---> \bbot\.*
-
-//.*bot.* incluiría "bot", "robot", "bots" y "robots"
