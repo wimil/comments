@@ -9,17 +9,6 @@ use Wimil\Comments\Helpers\FilterLinks;
 
 class CommentObserver
 {
-    //private $comment;
-    private $urlLinker;
-    private $filterLinks;
-    //private $config;
-
-    public function __construct()
-    {
-        //$this->config = array_pop(config('comments'));
-        $this->urlLinker = new UrlLinker($this->config('urlLinker.config'));
-        //$this->filterLinks = new FilterWords;
-    }
 
     private function config($key)
     {
@@ -31,11 +20,9 @@ class CommentObserver
     public function retrieved(Comment $comment)
     {
         if ($this->config('urlLinker.enable')) {
-            $comment->comment = $this->urlLinker->linkUrlsAndEscapeHtml($comment->comment);
+            $urlLinker = new UrlLinker($this->config('urlLinker.config'));
+            $comment->comment = $urlLinker->linkUrlsAndEscapeHtml($comment->comment);
         }
-
-
-        //return $comment;
     }
     /*
     * before a record has been created.
