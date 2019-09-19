@@ -4,7 +4,6 @@ namespace Wimil\Comments;
 
 use Illuminate\Support\ServiceProvider as ServiceProvider;
 use Wimil\Comments\Observer\CommentObserver;
-//use Wimil\Comments\Model\Comment;
 
 class Provider extends ServiceProvider
 {

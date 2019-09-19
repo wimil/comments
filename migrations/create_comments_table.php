@@ -22,9 +22,6 @@ class CreateCommentsTable extends Migration
             $table->text('comment');
             $table->enum('status', ['approved', 'locked']);
 
-            //$table->unsignedBigInteger('child_id')->nullable();
-            //$table->foreign('child_id')->references('id')->on('comments')->onDelete('cascade');
-
             $table->timestamps();
         });
     }

@@ -11,8 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 trait Commenter
 {
-
-    public function comment(Model $commentable, string $commentText = '')
+    public function comment($commentable, string $commentText = '')
     {
 
         $commentModel = config('comments.model');
@@ -28,6 +27,7 @@ trait Commenter
 
         return $comment;
     }
+
 
     /**
      * Returns all comments that this user has made.

@@ -23,7 +23,6 @@ class Comment extends Model
      */
     protected $fillable = ['comment', 'status', 'commenter_id', 'commenter_type'];
 
-
     /**
      * The user who posted the comment.
      */
