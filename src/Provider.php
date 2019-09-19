@@ -3,23 +3,28 @@
 namespace Wimil\Comments;
 
 use Illuminate\Support\ServiceProvider as ServiceProvider;
+use Wimil\Comments\Observer\CommentObserver;
+//use Wimil\Comments\Model\Comment;
 
 class Provider extends ServiceProvider
 {
 
-
-
     public function boot()
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../migrations');
+        //$this->loadMigrationsFrom(__DIR__ . '/../migrations');
+
+        $timestamp = date('Y_m_d_His', time());
 
         $this->publishes([
-            __DIR__ . '/../migrations/' => database_path('migrations')
+            __DIR__ . '/../migrations/create_comments_table.php' => database_path("migrations/{$timestamp}_create_comments_table.php")
         ], 'migrations');
 
         $this->publishes([
             __DIR__ . '/../config/comments.php' => config_path('comments.php'),
-        ], 'configs');
+        ], 'config');
+
+        //register observer
+        config('comments.model')::observe(CommentObserver::class);
     }
     public function register()
     {
@@ -29,3 +34,21 @@ class Provider extends ServiceProvider
         );
     }
 }
+
+//.*bot$
+
+//^.*bot.*$|
+
+//^.*bot.*$
+
+//\bdramasmp4.com\b
+
+//^bot.*$||^.*eee$||^.*aaa.*$||\bdoramasmp4.com\b
+
+
+
+//.*bot incluiría "bot" y "robot"    --> \.*bot\b
+
+//bot.* incluiría "bot" y "bots"   ---> \bbot\.*
+
+//.*bot.* incluiría "bot", "robot", "bots" y "robots"

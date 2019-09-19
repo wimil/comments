@@ -5,7 +5,7 @@ return [
      * This is the default comment model of the application.
      * If you create another comment class with extending this one, you should update this field with that.
      */
-    'model' => \Wimil\Comments\Models\Comment::class,
+    'model' => \Wimil\Comments\Model\Comment::class,
 
     /*
     * Estado el cual el comentario sera agregado, (aprobed, pending, blocked)
