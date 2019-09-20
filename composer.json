@@ -22,9 +22,7 @@
     "psr-4": {
       "Wimil\\Comments\\": "src/"
     },
-    "files": [
-
-    ]
+    "files": []
   },
   "extra": {
     "laravel": {

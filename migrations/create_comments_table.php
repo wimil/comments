@@ -22,7 +22,12 @@ class CreateCommentsTable extends Migration
             $table->text('comment');
             $table->enum('status', ['approved', 'locked']);
 
-            $table->timestamps();
+            if (config('comments.timestamps')) {
+                $table->timestamps();
+            } else {
+                $table->bigInteger('updated_at')->nullable();
+                $table->bigInteger('created_at')->nullable();
+            }
         });
     }
 

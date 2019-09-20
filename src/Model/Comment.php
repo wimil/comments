@@ -37,4 +37,18 @@ class Comment extends Model
     {
         return $this->morphTo();
     }
+
+    /**
+     * Get the format for database stored dates.
+     *
+     * @return string
+     */
+    public function getDateFormat()
+    {
+        if (config('comments.timestamps')) {
+            return 'Y-m-d H:i:s';
+        } else {
+            return 'U';
+        }
+    }
 }

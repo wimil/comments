@@ -15,6 +15,16 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Timestamps
+    |--------------------------------------------------------------------------
+    | Change timestamps for Unix timestamps
+    | timestamps => true (default) / false (Unix timestamps)
+    */
+    'timestamps' => true,
+
+
+    /*
+    |--------------------------------------------------------------------------
     | Blacklist (forbidden words)
     |--------------------------------------------------------------------------
     | You can add. * At the beginning or end of a word or phrase so that more words    || are found. Examples:
